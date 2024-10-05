@@ -1,6 +1,8 @@
 import SearchBox from "./SearchBox.jsx"
 import InfoBox from  "./InfoBox.jsx";
 import { useState } from "react"
+import './WeatherApp.css';
+
 export default function WeartherApp()
 {
      const [weatherInfo,setweatherInfo]=useState({
@@ -19,11 +21,12 @@ export default function WeartherApp()
     }
     
     return (
-        <div style={{textAlign:"center" ,  border: '2px solid',
-        borderColor: 'red green blue yellow', 
-        borderRadius: '10px', 
-        padding: '10px',
-        width:'500px' }}>
+        // <div style={{textAlign:"center" ,  border: '2px solid',
+        // borderColor: 'red green blue yellow', 
+        // borderRadius: '10px', 
+        // padding: '10px',
+        // width:'500px' }}>
+        <div className="weatherAppContainer">
             <h2>WeatherSummary</h2>
             <SearchBox updateInfo={updateInfo}/>
             <InfoBox info={weatherInfo}/>

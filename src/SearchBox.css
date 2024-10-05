@@ -1,3 +1,34 @@
 .SearchBox{
     margin-bottom: 25px;
 }
+
+
+
+.SearchBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+}
+
+.SearchBox form {
+    width: 100%;
+    max-width: 400px; /* To make sure the input doesn't stretch too much */
+}
+
+.TextField {
+    width: 100%;
+}
+
+.Button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .SearchBox form {
+        width: 90%; /* Ensure form is responsive on smaller screens */
+    }
+}

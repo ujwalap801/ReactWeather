@@ -1,6 +1,6 @@
 
 import './App.css'
-import WeartherApp from "./WeartherApp.jsx"
+import WeartherApp from "./WeatherApp.jsx"
 function App() {
 
   return (

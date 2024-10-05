@@ -9,8 +9,8 @@ import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import rain from './assets/Rain.png';
-import sun from './assets/Sun.png';
-import snow from './assets/Snow.jpg';
+import sun from './assets/sun.jpg';
+import snow from './assets/snow.jpg';
 
 
 export default function InfoBox({info})
