@@ -11,6 +11,16 @@
     padding: 10px;
     margin: 10px;
     width: 100%;
+   
+    
+
+}
+
+
+TextField
+{
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for search
+
 }
 
 .SearchBox form {
@@ -30,5 +40,53 @@
 @media (max-width: 600px) {
     .SearchBox form {
         width: 90%; /* Ensure form is responsive on smaller screens */
+    }
+}
+
+
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+.city-input {
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid #61dafb; /* Change border color */
+    padding: 10px; /* Padding inside the input */
+    font-size: 16px; /* Font size */
+    margin-right: 8px; /* Space between input and button */
+    flex: 1; /* Allow input to take available space */
+   color:pink
+}
+
+
+
+.city-input {
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid #61dafb; /* Change border color */
+    padding: 10px; /* Padding inside the input */
+    font-size: 16px; /* Font size */
+    margin-right: 8px; /* Space between input and button */
+    flex: 1; /* Allow input to take available space */
+    background-color: #f0f8ff; /* Light blue background color */
+    color: #333; /* Text color for better contrast */
+}
+
+
+.search-icon {
+    color: #61dafb; /* Icon color */
+    margin-right: 8px; /* Space between icon and input */
+    font-size: 20px; /* Adjust icon size */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Media queries to ensure the card adjusts on mobile */
+@media (max-width: 768px) {
+    .SearchBox {
+        flex-direction: column; /* Stack elements */
     }
 }

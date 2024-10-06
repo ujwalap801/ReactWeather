@@ -37,3 +37,40 @@
         width: 90%; /* Responsive width for mobile */
     }
 }
+
+
+.card {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+    margin: 1rem auto; /* Center the card horizontally */
+    padding: 1.5rem;
+    border-radius: 8px; /* Rounded corners for card */
+    background-color: #ffffff; /* Background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    width: 100%; /* Make it responsive */
+    max-width: 400px; /* Maximum width for larger screens */
+}
+
+
+
+.card {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+    margin: 1rem auto; /* Center the card horizontally */
+    padding: 1.5rem;
+    border-radius: 8px; /* Rounded corners for card */
+    background-color: #ffffff; /* Background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    width: 100%; /* Make it responsive */
+    max-width: 400px; /* Maximum width for larger screens */
+}
+
+/* Media query for mobile view adjustments */
+@media (max-width: 600px) {
+    .card {
+        margin-right: auto; /* Align card to the left on mobile */
+        margin-left: 20px; /* Add space from the left */
+    }
+}

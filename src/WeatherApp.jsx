@@ -27,7 +27,7 @@ export default function WeartherApp()
         // padding: '10px',
         // width:'500px' }}>
         <div className="weatherAppContainer">
-            <h2>WeatherSummary</h2>
+            <h2>Weather Summary</h2>
             <SearchBox updateInfo={updateInfo}/>
             <InfoBox info={weatherInfo}/>
         </div>

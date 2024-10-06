@@ -1,27 +1,24 @@
+
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
 import { useState } from 'react';
-import "./SearchBox.css"
-export default function SearchBox({updateInfo})
-{
-    let [city,setCity]=useState("");
-    let [error,setError]=useState(false);
+import "./SearchBox.css";
 
-    const API_URL="https://api.openweathermap.org/data/2.5/weather";
+export default function SearchBox({ updateInfo }) {
+    let [city, setCity] = useState("");
+    let [error, setError] = useState(false);
+    const API_URL = "https://api.openweathermap.org/data/2.5/weather";
+    const API_KEY = "c223b0463eef5df08679ab3d57c1bb9b";
 
-    const API_KEY="c223b0463eef5df08679ab3d57c1bb9b";
-    
     const getWeatherInfo = async () => {
         try {
-            let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
+            let response = await fetch(`${API_URL}?q=${city.trim()}&appid=${API_KEY}&units=metric`); // Trim spaces
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             let jsonResponse = await response.json();
-            console.log(jsonResponse);
             let result = {
-                city:city,
+                city: city,
                 temp: jsonResponse.main.temp,
                 tempMin: jsonResponse.main.temp_min,
                 tempMax: jsonResponse.main.temp_max,
@@ -32,49 +29,47 @@ export default function SearchBox({updateInfo})
 
             return result;
         } catch (error) {
-           throw error;
-            // Display an error message to the user
+            setError(true);
         }
     };
 
-
-    let handleChange= (evt)=>
-    {
-          setCity(evt.target.value);
+    let handleChange = (evt) => {
+        setCity(evt.target.value);
     }
 
-    let handleSubmit= async (evt)=>
-    {try{
-           evt.preventDefault();
-           console.log(city);
-           setCity("");
-       let newinfo =await getWeatherInfo();
-       updateInfo(newinfo);
-    } catch(error)
-    {
-        setError(true);
+    let handleSubmit = async (evt) => {
+        evt.preventDefault();
+        setCity("");
+        let newinfo = await getWeatherInfo();
+        if (newinfo) {
+            updateInfo(newinfo);
+        }
     }
-}
-    return(
+
+    return (
         <div className='SearchBox'>
-          
             <form onSubmit={handleSubmit}>
-            <TextField id="city"
-             label="City Name" 
-             variant="outlined" 
-             value={city}
-             required
-             onChange={handleChange}/>
-
-                   
-                   <br></br>
-                   <br></br>
-             <Button variant="contained" type='submit' >
-                Search
+                <div className="input-container">
+                
+                    <TextField
+                        id="city"
+                        label="City Name"
+                        variant="outlined"
+                        value={city}
+                        required
+                        onChange={handleChange}
+                        className="city-input" // Add custom class
+                       
+                   />
+                       
+                </div>
+             
+                <br></br>
+                <Button variant="contained" type='submit'>
+                    Search
                 </Button>
-
-                {error && <p style={{color:"red"}}>No such place exist</p>}
-                </form>
+                {error && <p className="error-message">No such place exists</p>}
+            </form>
         </div>
-    )
+    );
 }
