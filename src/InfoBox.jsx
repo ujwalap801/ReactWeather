@@ -71,3 +71,80 @@ export default function InfoBox({info})
       </div>
     );
 }
+
+
+
+
+// import Card from '@mui/material/Card';
+// import CardContent from '@mui/material/CardContent';
+// import CardMedia from '@mui/material/CardMedia';
+// import Typography from '@mui/material/Typography';
+// import "./InfoBox.css";
+// import WbSunnyIcon from '@mui/icons-material/WbSunny';
+// import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
+// import AcUnitIcon from '@mui/icons-material/AcUnit';
+// import rain from './assets/Rain.png';
+// import sun from './assets/sun.jpg';
+// import snow from './assets/snow.jpg';
+
+// export default function InfoBox({ info, error }) {
+//   const INIT_URL =
+//     "https://images.unsplash.com/photo-1575214997383-a3592741c334?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGR1c3R5JTIwd2VhdGhlcnxlbnwwfHwwfHx8MA%3D%3D";
+
+//   const HOT_URL = sun;
+//   const COLD_URL = snow;
+//   const RAIN_URL = rain;
+
+//   return (
+//     <div className='InfoBox'>
+//       <div className='cardContainer'>
+//         <Card sx={{ maxWidth: 600, width: '100%' }}>
+//           {/* Check if there is an error. If true, show error message, otherwise show card content */}
+//           {error ? (
+//             <CardContent>
+//               <Typography variant="h6" color="error">
+//                 No such place exists
+//               </Typography>
+//             </CardContent>
+//           ) : (
+//             <>
+//               <CardMedia
+//                 sx={{ height: 140 }}
+//                 image={
+//                   info.humidity > 80
+//                     ? RAIN_URL
+//                     : info.temp > 15
+//                     ? HOT_URL
+//                     : COLD_URL
+//                 }
+//                 title="weather"
+//               />
+//               <CardContent>
+//                 <Typography gutterBottom variant="h5" component="div">
+//                   {info.city}{" "}
+//                   {info.humidity > 80 ? (
+//                     <ThunderstormIcon />
+//                   ) : info.temp > 15 ? (
+//                     <WbSunnyIcon />
+//                   ) : (
+//                     <AcUnitIcon />
+//                   )}
+//                 </Typography>
+//                 <Typography variant="body2" color="text.secondary" component={"span"}>
+//                   <div>Temperature = {info.temp}&deg;C</div>
+//                   <div>Humidity = {info.humidity}</div>
+//                   <p>Min Temp = {info.tempMin}&deg;C</p>
+//                   <p>Max Temp = {info.tempMax}&deg;C</p>
+//                   <p>
+//                     The Weather can be described as
+//                     <i> {info.weather}</i> and feels like = {info.feelsLike}&deg;C
+//                   </p>
+//                 </Typography>
+//               </CardContent>
+//             </>
+//           )}
+//         </Card>
+//       </div>
+//     </div>
+//   );
+// }

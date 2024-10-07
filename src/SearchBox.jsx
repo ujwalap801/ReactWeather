@@ -1,4 +1,3 @@
-
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
@@ -7,7 +6,9 @@ import "./SearchBox.css";
 export default function SearchBox({ updateInfo }) {
     let [city, setCity] = useState("");
     let [error, setError] = useState(false);
-    const API_URL = "https://api.openweathermap.org/data/2.5/weather";
+    
+    // Define the API URL
+    const API_URL = "https://api.openweathermap.org/data/2.5/weather"; 
     const API_KEY = "c223b0463eef5df08679ab3d57c1bb9b";
 
     const getWeatherInfo = async () => {
@@ -43,6 +44,7 @@ export default function SearchBox({ updateInfo }) {
         let newinfo = await getWeatherInfo();
         if (newinfo) {
             updateInfo(newinfo);
+            setError(false); // Reset the error if a valid response is received
         }
     }
 
@@ -50,7 +52,6 @@ export default function SearchBox({ updateInfo }) {
         <div className='SearchBox'>
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
-                
                     <TextField
                         id="city"
                         label="City Name"
@@ -59,12 +60,9 @@ export default function SearchBox({ updateInfo }) {
                         required
                         onChange={handleChange}
                         className="city-input" // Add custom class
-                       
-                   />
-                       
+                    />
                 </div>
-             
-                <br></br>
+                <br />
                 <Button variant="contained" type='submit'>
                     Search
                 </Button>
@@ -73,3 +71,5 @@ export default function SearchBox({ updateInfo }) {
         </div>
     );
 }
+
+
