@@ -39,8 +39,6 @@ A responsive weather application built with **ReactJS** that fetches real-time w
 
 To run this project locally:
 
-### 1. Clone the repository
-
 ```bash
 # Clone the repository
 git clone https://github.com/ujwalap801/ReactWeather.git
